@@ -47,10 +47,22 @@ public class SimpleTailTest {
 			SimpleTail.tail(args);
 			Assert.assertFalse("There should  be error for -5", true);
 		} catch(Throwable th){
-			Assert.assertFalse("There should not be any error but found" + th.getMessage(), false);
+			Assert.assertFalse("There should be error" + th.getMessage(), false);
 		}finally {
 			
 		}
 	}
 
+	@Test
+	public void testFailNoArgument() {
+		try {
+			String[] args = new String[]{};
+			SimpleTail.tail(args);
+			Assert.assertFalse("There should  be error for -5", true);
+		} catch(Throwable th){
+			Assert.assertFalse("There should be error" + th.getMessage(), false);
+		}finally {
+			
+		}
+	}
 }
